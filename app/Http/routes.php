@@ -14,6 +14,11 @@ Route::get('controlador','PruebaController@index');
 Route::get('name/{nombre}','PruebaController@nombre');
 Route::resource('hotel','HotelController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FrontController@index');
+
+// Route::get('/', function () {
+// 	$name = DB::Connection()->getDatabaseName();
+// 	return 'Conectado a '.$name;
+// });
+
+

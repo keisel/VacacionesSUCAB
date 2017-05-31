@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use VacacionesSUCAB\Http\Requests;
 use VacacionesSUCAB\Http\Controllers\Controller;
+use DB;
 
 class HotelController extends Controller
 {
@@ -16,7 +17,8 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return "Hotel index";
+        $hoteles = DB::selectOne("select * from hotel");
+        return "El nombre del hotel es: ".$hoteles->nombre." y de categoria: ".$hoteles->categoria;
     }
 
     /**
@@ -26,7 +28,14 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return "Aqui se agregaran hoteles";
+
+        // DB::insert("insert into hotel(nombre, categoria, descripcion, direccion, idHotelLugar) values (?, ?, ?, ?, ?)", ['Hotel de Prueba 2', '3', 'Este es otro hotel de prueba', 'Direccion de prueba 2', 3]);
+        // echo "<hr/>Insertado en la base de datos un hotel<br/>";
+        // $hoteles = DB::selectOne("select * from hotel");
+
+        $hoteles = DB::selectOne("select * from hotel");
+        return "El nombre del hotel es: ".$hoteles->nombre." y de categoria: ".$hoteles->categoria;
+        
     }
 
     /**
