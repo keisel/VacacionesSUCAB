@@ -1,6 +1,6 @@
 <?php
 
-namespace VacacionesSUCAB\Events;
+namespace App\Events;
 
 abstract class Event
 {

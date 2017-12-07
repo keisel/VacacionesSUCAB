@@ -1,6 +1,6 @@
 <?php
 
-namespace VacacionesSUCAB\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -10,15 +10,23 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('controlador','PruebaController@index');
-Route::get('name/{nombre}','PruebaController@nombre');
-Route::resource('hotel','HotelController');
-
-Route::get('/','FrontController@index');
-
-// Route::get('/', function () {
-// 	$name = DB::Connection()->getDatabaseName();
-// 	return 'Conectado a '.$name;
-// });
 
 
+
+
+Route::group(['middleware' => ['web']], function () {
+
+ route::get('/','VistaController@inicio');
+ route::get('registro','VistaController@registro');
+ route::get('sedes','VistaController@sedes');
+ route::get('pruebas','VistaController@pruebas');
+ route::get('materiaPrima','VistaController@materiaPrima');
+ route::get('diseñoAvion','VistaController@diseñoAvion');
+ 
+
+
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
