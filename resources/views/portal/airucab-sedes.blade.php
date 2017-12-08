@@ -25,21 +25,22 @@
   <div class="row ">
     <div class="col-lg-4 col-lg-offset-2 col-xs-12 " id="home">
 
-       <div class="form-group">
-        <label for="formGroup">Sede</label>
-          <select name= "sexo" id="sexo" class="form-control" required>
-            <option value="">Seleccione la sede</option>
-            <option value=""> </option>
-            <option value=""> </option>
+      <div class="form-group">
+        <label for="formGroup">Materiales </label>
+          <select name= "material" id="material" class="form-control" required>
+            <option value="">Ingrese el material</option>
+            @foreach($materiales as $material) 
+            <option value="{{$material->cod_material}}">{{$material->nombre}}</option>
+          @endforeach
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="formGroup">Material Recibido</label>
-          <select name= "sexo" id="sexo" class="form-control" required>
-            <option value="">Seleccione material</option>
-            <option value=""> </option>
-            <option value=""> </option>
+       <div class="form-group">
+        <label for="formGroup">Sede </label>
+          <select name= "sede" id="sede" class="form-control" required>
+            <option value="">Ingrese la sede</option>
+            @foreach($sedes as $sede) 
+            <option value="{{$sede->cod_sede}}">{{$sede->nombre_sede}}</option>
+          @endforeach
         </select>
       </div>
 
@@ -139,12 +140,13 @@
     <div class="col-lg-4 col-lg-offset-4 col-xs-12 ">
 
   
-       <div class="form-group">
+      <div class="form-group">
         <label for="formGroup">Sede </label>
-          <select name= "sexo" id="sexo" class="form-control" required>
+          <select name= "sede" id="sede" class="form-control" required>
             <option value="">Ingrese la sede</option>
-            <option value=""> </option>
-            <option value=""> </option>
+            @foreach($sedes as $sede) 
+            <option value="{{$sede->cod_sede}}">{{$sede->nombre_sede}}</option>
+          @endforeach
         </select>
       </div>
       

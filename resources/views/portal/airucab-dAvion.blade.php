@@ -14,14 +14,14 @@
 
 <div class="container margenMenu" id="margenSubmenu">
           <ul class="nav nav-tabs nav-justified ">
-            <li class="active" ><a id="Amarillo" href="#modrec" role="tab" data-toggle="tab">Modelos recientes</a></li>
-            <li ><a id="Azul" href="#Lista" role="tab" data-toggle="tab">Elige tu modelo</a></li>
-            <li class="active" ><a id="Amarillo" href="#home" role="tab" data-toggle="tab">Crea tu solicitud</a></li>
+            
+            <li class="active"><a id="Azul" href="#modelo" role="tab" data-toggle="tab">Elige tu modelo</a></li>
+            <li ><a id="Amarillo" href="#solicitud" role="tab" data-toggle="tab">Crea tu solicitud</a></li>
             <li ><a id="Azul" href="#Lista" role="tab" data-toggle="tab"> Lista de solicitudes</a></li>
           </ul>
 </div>
           <div class="tab-content " >
-            <div class="tab-pane fade in active" id="modrec">
+            <div class="tab-pane fade in active" id="modelo">
 
               <div class="row" id="margenSubmenu">
       <div class="col-md-4">
@@ -156,9 +156,7 @@
 
 </div>
             </div>
-              </div>
-
-            </div>
+              
 
             <div class="tab-pane fade " id="Lista">
             <div class="container" id="margenSubmenu" >
@@ -204,78 +202,7 @@
 
             </div>
             </div>
-
-            <div class="tab-pane fade" id="Proveedores">
-              <div class="container-fluid" id="margenSubmenu">
-                <div class="row">
-    <div class="col-lg-4 col-lg-offset-2 col-xs-12 ">
-
-
-      <div class="form-group">
-         <label for="formGroup">Nombre</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el nombre*">
-      </div>
-
-      <div class="form-group">
-         <label for="formGroup">Dirección</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el monto acreditado*">
-      </div>
-      <div class="form-group">
-         <label for="formGroup">Monto acreditado</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el apellido*">
-      </div>
-      <div class="form-group">
-         <label for="formGroup">Telefono 1</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el telefono 1*">
-      </div>
-
-  </div>
-
-  <div class="col-lg-4">
-
- <div class="form-group">
-         <label for="formGroup">Telefono 2</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el telefono 2*">
-      </div>
-
-
-<div class="form-group">
-         <label for="formGroup">Correo electronico</label>
-          <input class="form-control"  type="text" placeholder="Ingrese su correo*">
-      </div>
-
-<div class="form-group">
-         <label for="formGroup">Pagina web</label>
-          <input class="form-control"  type="text" placeholder="Ingrese su pagina web*">
-      </div>
-
-        <div class="form-group">
-                 <label for="formGroup">Fecha de incio</label>
-                <input type="date" class="form-control" step="1" min="1940-01-01" max="2017-30-06" name="fecha_ini" id="fecha_ini" placeholder="Ingresa la fecha de inicio" >
             </div>
 
-
-</div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-xs-12 col-lg-offset-4 col-lg-4" id="fondo">
-      <div id="margenbotonAgregar">
-        <center><button id="botonVerde" type="submit" class="btn btn-default btn-block btn-lg"><span  class="fa fa-upload" aria-hidden="true"></span> Agregar Proveedor</button></center>
-
-      </div>
-    </div>
-</div>
-
-
-
-            </div>
-            </div>
-
-
-
-        </div>
-
+        
  @endsection

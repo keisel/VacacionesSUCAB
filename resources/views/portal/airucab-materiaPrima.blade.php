@@ -22,20 +22,24 @@
          <label for="formGroup">Cantidad</label>
           <input class="form-control"  type="text" placeholder="Ingrese cantidad*">
       </div>
+
+
       <div class="form-group">
         <label for="formGroup">Proveedor </label>
-          <select name= "sexo" id="sexo" class="form-control" required>
-            <option value="">Ingrese el proveedor</option>
-            <option value=""> </option>
-            <option value=""> </option>
+          <select name= "proveedor" id="proveedor" class="form-control" required>
+            <option value="">seleccione el proveedor</option>
+            @foreach($proveedores as $proveedor) 
+            <option value="{{$proveedor->id_proveedor}}">{{$proveedor->nombre}}</option>
+          @endforeach
         </select>
       </div>
       <div class="form-group">
         <label for="formGroup">Sede </label>
           <select name= "sede" id="sexo" class="form-control" required>
             <option value="">Ingrese la sede</option>
-            <option value=""> </option>
-            <option value=""> </option>
+            @foreach($sedes as $sede) 
+            <option value="{{$sede->cod_sede}}">{{$sede->nombre_sede}}</option>
+          @endforeach
         </select>
       </div>
        <div class="form-group">

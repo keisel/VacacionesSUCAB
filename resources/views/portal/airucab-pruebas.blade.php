@@ -34,13 +34,21 @@
                 <input type="date" class="form-control" step="1" min="1940-01-01" max="2017-30-06" name="fecha_ini" id="fecha_ini" placeholder="Ingresa la fecha" >
         </div>
       <div class="form-group">
-         <label for="formGroup">Materiales</label>
-          <input class="form-control"  type="text" placeholder="Ingrese el nombre*">
+        <label for="formGroup">Materiales </label>
+          <select name= "material" id="material" class="form-control" required>
+            <option value="">Ingrese el material</option>
+            @foreach($materiales as $material) 
+            <option value="{{$material->cod_material}}">{{$material->nombre}}</option>
+          @endforeach
+        </select>
       </div>
-      <div class="form-group">
-        <label for="formGroup">Sede</label>
-          <select name= "sexo" id="sexo" class="form-control" required>
-            <option value="">Seleccione la sede</option>
+       <div class="form-group">
+        <label for="formGroup">Sede </label>
+          <select name= "sede" id="sede" class="form-control" required>
+            <option value="">Ingrese la sede</option>
+            @foreach($sedes as $sede) 
+            <option value="{{$sede->cod_sede}}">{{$sede->nombre_sede}}</option>
+          @endforeach
         </select>
       </div>
 

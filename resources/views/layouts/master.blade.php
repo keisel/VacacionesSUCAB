@@ -94,7 +94,64 @@
 @yield('script')
 
 
+
 <script>
+
+$(function (){   
+   $('#pais').on('change',buscarEstado);
+   $('#estado').on('change',buscarMunicipio);
+   $('#municipio').on('change',buscarParroquia);
+
+    });
+
+    function  buscarEstado() {
+    var pais= $(this).val();
+    $.get('/buscarEstado/'+pais+'/pertenece', function (data)
+      { 
+        
+        var html_select='<option  value="">Estado al que pertenece</option>';
+        $('#estado').html(html_select);
+        for (var i = 0; i < data.length; ++i) 
+        {
+          html_select +='<option value="'+data[i].id_lugar+'">'+data[i].nombre_lugar+'</option>';
+          $('#estado').html(html_select);
+        }
+      });
+    
+  }
+
+  function  buscarMunicipio() {
+    var estado= $(this).val();
+    $.get('/buscarMunicipio/'+estado+'/pertenece', function (data)
+      { 
+        
+        var html_select='<option  value="">Municipio al que pertenece</option>';
+        $('#municipio').html(html_select);
+        for (var i = 0; i < data.length; ++i) 
+        {
+          html_select +='<option value="'+data[i].id_lugar+'">'+data[i].nombre_lugar+'</option>';
+          $('#municipio').html(html_select);
+        }
+      });
+    
+  }
+
+  function  buscarParroquia() {
+    var estado= $(this).val();
+    $.get('/buscarParroquia/'+estado+'/pertenece', function (data)
+      { 
+        
+        var html_select='<option  value="">Parroquia a la que pertenece</option>';
+        $('#parroquia').html(html_select);
+        for (var i = 0; i < data.length; ++i) 
+        {
+          html_select +='<option value="'+data[i].id_lugar+'">'+data[i].nombre_lugar+'</option>';
+          $('#parroquia').html(html_select);
+        }
+      });
+    
+  }
+
 $(document).ready(function(){
 
   $("#m1").hide(500);
